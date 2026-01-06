@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- dependent spring bean -->
+	<bean id="date" class="java.time.LocalDate" factory-method="now"/>
+
+	<!-- target spring bean -->
+	<bean id="sf" class="com.nt.sbeans.SeasonFinder">
+		<property name="date" ref="date"/>
+	</bean>
+
+</beans>
